@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_html/html_parser.dart';
-import 'package:flutter_html/style.dart';
 
 void main() => runApp(new MyApp());
 
@@ -29,111 +27,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 const htmlData = """
-<h1>Header 1</h1>
-<h2>Header 2</h2>
-<h3>Header 3</h3>
-<h4>Header 4</h4>
-<h5>Header 5</h5>
-<h6>Header 6</h6>
-<h3>Ruby Support:</h3>
-      <p>
-        <ruby>
-          漢<rt>かん</rt>
-          字<rt>じ</rt>
-        </ruby>
-        &nbsp;is Japanese Kanji.
-      </p>
-      <h3>Support for <code>sub</code>/<code>sup</code></h3>
-      Solve for <var>x<sub>n</sub></var>: log<sub>2</sub>(<var>x</var><sup>2</sup>+<var>n</var>) = 9<sup>3</sup>
-      <p>One of the most <span>common</span> equations in all of physics is <br /><var>E</var>=<var>m</var><var>c</var><sup>2</sup>.</p>
-      <h3>Inline Styles:</h3>
-      <p>The should be <span style='color: blue;'>BLUE style='color: blue;'</span></p>
-      <p>The should be <span style='color: red;'>RED style='color: red;'</span></p>
-      <p>The should be <span style='color: rgba(0, 0, 0, 0.10);'>BLACK with 10% alpha style='color: rgba(0, 0, 0, 0.10);</span></p>
-      <p>The should be <span style='color: rgb(0, 97, 0);'>GREEN style='color: rgb(0, 97, 0);</span></p>
-      <p>The should be <span style='background-color: red; color: rgb(0, 97, 0);'>GREEN style='color: rgb(0, 97, 0);</span></p>
-      <p style="text-align: center;"><span style="color: rgba(0, 0, 0, 0.95);">blasdafjklasdlkjfkl</span></p>
-      <p style="text-align: right;"><span style="color: rgba(0, 0, 0, 0.95);">blasdafjklasdlkjfkl</span></p>
-      <p style="text-align: justify;"><span style="color: rgba(0, 0, 0, 0.95);">blasdafjklasdlkjfkl</span></p>
-      <p style="text-align: center;"><span style="color: rgba(0, 0, 0, 0.95);">blasdafjklasdlkjfkl</span></p>
-      <h3>Table support (with custom styling!):</h3>
-      <p>
-      <q>Famous quote...</q>
-      </p>
-      <table>
-      <colgroup>
-        <col width="50%" />
-        <col width="25%" />
-        <col width="25%" />
-      </colgroup>
-      <thead>
-      <tr><th>One</th><th>Two</th><th>Three</th></tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>Data</td><td>Data</td><td>Data</td>
-      </tr>
-      <tr>
-        <td>Data</td><td>Data</td><td>Data</td>
-      </tr>
-      </tbody>
-      <tfoot>
-      <tr><td>fData</td><td>fData</td><td>fData</td></tr>
-      </tfoot>
-      </table>
-      <h3>Custom Element Support:</h3>
-      <flutter></flutter>
-      <flutter horizontal></flutter>
-      <h3>SVG support:</h3>
-      <svg id='svg1' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
-            <circle r="32" cx="35" cy="65" fill="#F00" opacity="0.5"/>
-            <circle r="32" cx="65" cy="65" fill="#0F0" opacity="0.5"/>
-            <circle r="32" cx="50" cy="35" fill="#00F" opacity="0.5"/>
-      </svg>
-      <h3>List support:</h3>
-      <ol>
-            <li>This</li>
-            <li><p>is</p></li>
-            <li>an</li>
-            <li>
-            ordered
-            <ul>
-            <li>With<br /><br />...</li>
-            <li>a</li>
-            <li>nested</li>
-            <li>unordered
-            <ol>
-            <li>With a nested</li>
-            <li>ordered list.</li>
-            </ol>
-            </li>
-            <li>list</li>
-            </ul>
-            </li>
-            <li>list! Lorem ipsum dolor sit amet.</li>
-            <li><h2>Header 2</h2></li>
-            <h2><li>Header 2</li></h2>
-      </ol>
-      <h3>Link support:</h3>
-      <p>
-        Linking to <a href='https://github.com'>websites</a> has never been easier.
-      </p>
-      <h3>Image support:</h3>
-      <p>
-        <img alt='Google' src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png' />
-        <a href='https://google.com'><img alt='Google' src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png' /></a>
-        <img alt='Alt Text of an intentionally broken image' src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30d' />
-      </p>
-      <h3>Video support:</h3>
-      <video controls>
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" />
-      </video>
-      <h3>Audio support:</h3>
-      <audio controls>
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" />
-      </audio>
-      <h3>IFrame support:</h3>
-      <iframe src="https://google.com"></iframe>
+<div style='font-size:18px;line-height:1.2;'>
+<img src="https://www.wakeai.cn/static/hnxjz/73f81953bb1e6dbe07df91f908e4b15a77e989b11608630789.jpg">
+<p style="text-indent:2em;">　　新湖南客户端12月22日讯（通讯员 秦于钦）12月18日，第35届衡阳市青少年科技创新大赛在衡阳高新区衡州小学举行，衡州小学的湖南日报小记者对此次大赛全程进行了体验采访。</p>
+<img src="https://www.wakeai.cn/static/hnxjz/0a0ef28c9cd68d45ed4a1592ac14059ac65561201608630832.jpg">
+<p style="text-indent:2em;">　　本届大赛由衡阳市科学技术协会、衡阳市教育局、衡阳市科学技术局联合主办，以“创新·体验·成长”为主题，共收到117所中小学校推荐申报的542个项目作品。通过参加市级资格审查和初评，此次共有来自全市35所中小学校的67名学生的46个优秀项目进入决赛。大赛共设立7项奖项。</p>
+<img src="https://www.wakeai.cn/static/hnxjz/3fb6e017c4545635b34754371653018d3f30bb3b1608630859.jpg">
+<p style="text-align:center;font-size:14px;">衡阳市教育局副局长彭天文</p>
+<p style="text-indent:2em;">　　衡阳市教育局副局长彭天文接受湖南日报小记者黄馨乐体验采访时说：“科技创新是教育之本，衡阳教育系统历来非常重视科技教育工作。”他希望通过湖南日报小记者告诉广大青少年，平时多观察生活中的科技现象，不断探索科技精神。</p>
+<img src="https://www.wakeai.cn/static/hnxjz/1bf0aebc933cfdf21d46697d360260b99912154c1608630880.jpg">
+<p style="text-align:center;font-size:14px;">衡阳市科协青少年科技活动中心副主任李艳</p>
+<p style="text-indent:2em;">　　衡阳市科协青少年科技活动中心副主任李艳向小记者曾梓恒介绍说：“本次青少年科技创新大赛，旨在为全省和全国的同类型赛事选拔好的参赛作品，同时也是培养同学们的动手能力，给大家一个交流展示的平台。”</p>
+<img src="https://www.wakeai.cn/static/hnxjz/63b889d3d02e78f284cad15357220206d7b6d01c1608630922.jpg">
+<p style="text-align:center;font-size:14px;">衡阳市科技馆馆长何志文</p>
+<p style="text-indent:2em;">　　衡阳市科技馆馆长何志文已经是第二次接受湖南日报小记者的体验采访了，他勉励小记者蒋易辰平时学好书本知识，打好理论基础。拓展兴趣爱好，拓展创新思维，就一定能在科技创新上取得成绩。</p>
+<img src="https://www.wakeai.cn/static/hnxjz/14ed82c2d44123549b06619ddf21648f4039ee9f1608631090.jpg">
+<p style="text-align:center;font-size:14px;">衡州小学校长黄勇</p>
+<p style="text-indent:2em;">　　衡阳高新区衡州小学是此次活动的协办单位之一，是衡阳市青少年科技活动示范学校，目前正在争创省级青少年科技活动示范学校。衡州小学校长黄勇告诉小记者张竞文，衡州学子在科技创新活动中涌现了很多优秀的人才。全国青少年科学影像节三等奖，市青少年科技创新大赛二等奖得主，均是该校在读学生。</p>
+<img src="https://www.wakeai.cn/static/hnxjz/2a41dccc23dffc0cd0f0ed66d91baee545b0fc7d1608631056.jpg">
+<p style="text-align:center;font-size:14px;">34届衡阳市青少年科技创新大赛二等奖得主彭治策</p>
+<img src="https://www.wakeai.cn/static/hnxjz/84313c8403548e14ac4889d98b98d01f385835491608631197.jpg">
+<p style="text-align:center;font-size:14px;">第十届全国青少年科学影像节三等奖得主</p>
+<img src="https://www.wakeai.cn/static/hnxjz/bec14372cea660e5edb4344a91a588df449f434d1608631273.jpg">
+<p style="text-align:center;font-size:14px;">衡州小学科学老师刘晗</p>
+<p style="text-indent:2em;">　　赛后，湖南日报小记者们也与衡州小学科学老师刘晗以及优秀的衡州科技学子进行了交流，小记者们深刻的感受到了科技给学习生活带来的变化，领略了它的独特魅力。</p>
+</div>
 """;
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -147,41 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Html(
           data: htmlData,
-          //Optional parameters:
-          style: {
-            "html": Style(
-              backgroundColor: Colors.black12,
-//              color: Colors.white,
-            ),
-//            "h1": Style(
-//              textAlign: TextAlign.center,
-//            ),
-            "table": Style(
-              backgroundColor: Color.fromARGB(0x50, 0xee, 0xee, 0xee),
-            ),
-            "tr": Style(
-              border: Border(bottom: BorderSide(color: Colors.grey)),
-            ),
-            "th": Style(
-              padding: EdgeInsets.all(6),
-              backgroundColor: Colors.grey,
-            ),
-            "td": Style(
-              padding: EdgeInsets.all(6),
-            ),
-            "var": Style(fontFamily: 'serif'),
-          },
-          customRender: {
-            "flutter": (RenderContext context, Widget child, attributes, _) {
-              return FlutterLogo(
-                style: (attributes['horizontal'] != null)
-                    ? FlutterLogoStyle.horizontal
-                    : FlutterLogoStyle.markOnly,
-                textColor: context.style.color,
-                size: context.style.fontSize.size * 5,
-              );
-            },
-          },
+          style: {},
           onLinkTap: (url) {
             print("Opening $url...");
           },
